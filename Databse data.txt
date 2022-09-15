@@ -1,0 +1,59 @@
+
+
+insert into Authors(FirstName,LastName)
+values("Antonio","Raven"),
+("Grant", "Johnson"),
+("Jayce" ,"Raven"),
+("Aubrey" ,"Campbell"),
+("Ayden", "King"),
+("Jesse", "Moore"),
+("Reese", "Tyson"),
+("Gabriel", "Langley"),
+("Emily", "Raven"),
+("Ryan", "Rivera")
+;
+
+insert into Publisher(Name,Country, Address)
+values("Sawayn-Hammes","Australia","123 Fake st Melbourne Vic"),
+("Ullrich Ltd", "Australia","65 King St Melbourne Vic"),
+("Company Email" ,"Australia","64 Bullet Lane Melbourne Vic")
+
+;
+
+insert into Customers(FirstName,LastName,PhoneNumber, Address,Town,State,Postcode  )
+values("Aubree ","Bolt","0412 345 678", "1234 Fake St", "Melbourne","VIC",1234),
+("Caden  ","Nelson","04665332", "645 Melbourne Lane ", "Melbourne","VIC",1234),
+("Margot  ","Baker","046539874568", "65 Grain St", "Melbourne","VIC",1234),
+("Melanie  ","Tyson","0494563214", "69 Post St", "Melbourne","VIC",1234),
+("Aaliyah  ","Nora","0423363947", "84 Main St", "Melbourne","VIC",1234)
+;
+
+insert into Orders(OrderDate , Subtotal ,Shipping  ,Total ,CustomersID    )
+values("2022-05-12", 150 , 20, 170,1),
+("2022-05-12",100, 20, 120,2),
+("2022-05-12",52.5, 20, 72.5,3),
+("2022-05-12",70, 20, 90,4),
+("2022-05-12",250, 20, 270,5)
+;
+
+insert into Books(Title , ISBN , Genre  ,Price ,PublicationYear ,PublisherID , AuthorsID    )
+values("Programming in Java", 123456789 ,"Computers", 45.5, 2020, 1,1),
+("Cooking with lava", 658934 ,"Cooking", 50, 1958, 2,2),
+("Stockmarket for Dog", 659871233 ,"Business", 65.32, 2022, 3,3),
+("History of the Toilet", 6454987 ,"History", 78.54, 2009, 1,4),
+("Camping indoors", 312564 ,"Outdoors",44.44, 2011, 2,5),
+("Build a Nuclear reactor at home ", 36512 ,"Science", 125.5, 1985, 3,2),
+("The Year 20000", 2549 ,"science fiction", 32.5, 1955, 1,1),
+("Maths:The Complete Guide", 365489 ,"Science", 99.99, 2001, 2,3)
+
+;
+
+insert into OrderItem(BooksID ,OrdersID ,Price )
+values( 1, 1,45.5),
+( 2, 1,50),
+( 2, 2,50),
+( 6, 3,12.5),
+( 8, 4,99.99),
+( 6, 5,120.5)
+
+;

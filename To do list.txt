@@ -1,0 +1,9 @@
+finish backend
+	-finidhed databse schme in draw.io
+		-make database table in MySQL
+		-insert data in to database
+		-intergrate rest api with database
+	-test rest api with database
+	
+	
+start frontend
