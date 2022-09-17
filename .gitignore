@@ -1,7 +1,4 @@
 #file/s for git to ignore
 
-/frontend react/
-/frontend/
-/oldfrontend/
-/database/
 /.vscode/
+/RestApi/node_modules
