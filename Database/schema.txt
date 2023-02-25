@@ -1,0 +1,76 @@
+create database BookStore;
+use BookStore;
+
+SET SQL_SAFE_UPDATES = 0;
+
+CREATE TABLE Authors(
+AuthorsID int NOT NULL AUTO_INCREMENT,
+FirstName varchar(200) NOT NULL, 
+LastName varchar(200) NOT NULL, 
+
+PRIMARY KEY (AuthorsID)
+);
+
+CREATE TABLE Publisher(
+PublisherID int NOT NULL AUTO_INCREMENT,
+Name varchar(200) NOT NULL, 
+Country varchar(200) NOT NULL, 
+Address varchar(200) NOT NULL, 
+PRIMARY KEY (PublisherID)
+
+);
+
+CREATE TABLE Books(
+BooksID int NOT NULL AUTO_INCREMENT,
+Title varchar(200), 
+ISBN int, 
+Genre  varchar(200),
+Price DECIMAL(6,2),
+PublicationYear YEAR,
+PublisherID int, 
+AuthorsID  int, 
+PRIMARY KEY (BooksID),
+FOREIGN KEY (AuthorsID) REFERENCES Authors(AuthorsID),
+FOREIGN KEY (PublisherID) REFERENCES Publisher(PublisherID)
+);
+
+CREATE TABLE Customers(
+CustomersID int NOT NULL AUTO_INCREMENT,
+FirstName varchar(200), 
+LastName varchar(200),
+PhoneNumber  varchar(200),
+Address varchar(200),
+Town varchar(200),
+State varchar(200),
+Postcode  int, 
+PRIMARY KEY (CustomersID)
+
+);
+
+
+CREATE TABLE Orders(
+OrdersID int NOT NULL AUTO_INCREMENT,
+OrderDate DATE, 
+Subtotal DECIMAL(6,2),
+Shipping  DECIMAL(6,2),
+Total DECIMAL(6,2),
+CustomersID  int, 
+
+PRIMARY KEY (OrdersID),
+FOREIGN KEY (CustomersID) REFERENCES Customers(CustomersID)
+);
+
+
+CREATE TABLE OrderItem(
+OrderItemID int NOT NULL AUTO_INCREMENT,
+Price DECIMAL(6,2),
+BooksID int NOT NULL,
+OrdersID int NOT NULL,
+PRIMARY KEY (OrderItemID),
+
+FOREIGN KEY (OrdersID) REFERENCES Orders(OrdersID),
+FOREIGN KEY (BooksID) REFERENCES Books(BooksID)
+);
+
+
+select * from OrderItem;

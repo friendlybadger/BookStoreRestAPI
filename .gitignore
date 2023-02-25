@@ -1,0 +1,4 @@
+#file/s for git to ignore
+
+/.vscode/
+/RestApi/node_modules
